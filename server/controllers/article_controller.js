@@ -132,6 +132,13 @@ module.exports = {
       })
   },
 
+  uploadImage: function (req, res) {
+    res.status(201).send({
+      message: 'Upload image success',
+      link: req.file.cloudStoragePublicUrl
+    })
+  },
+
   remove: (req, res) => {
     Article.deleteOne({
       _id: req.params.id
