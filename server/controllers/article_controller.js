@@ -76,6 +76,7 @@ module.exports = {
   },
 
   create: (req, res) => {
+    console.log('HERE', req.headers)
     let token = req.headers.token
     let decoded = jwt.verify(token, secret)
     let newArticle = new Article ({
