@@ -37,7 +37,7 @@ module.exports = {
             let token = jwt.sign({
               id: user._id,
               username: user.username
-            })
+            }, secret)
 
             res.status(200).send({
               message: 'Login success',

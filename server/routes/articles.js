@@ -1,7 +1,8 @@
 const router = require('express').Router()
 const article = require('../controllers/article_controller')
 
-router.get('/:id', article.getById)
+router.get('/', article.getAll)
+      .get('/:id', article.getById)
       .get('/author/:query', article.getByAuthor)
       .get('/category/:query', article.getByCategory)
       .post('/create', article.create)
