@@ -6,6 +6,7 @@ const secret = process.env.SECRET
 module.exports = {
   getAll: (req, res) => {
     Article.find()
+      .populate('author')
       .then(response => {
         res.status(200).send({
           message: 'Show all data',
@@ -39,7 +40,6 @@ module.exports = {
   },
 
   getByAuthor: (req, res) => {
-    console.log(req.params)
     Article.find({
       author: req.params.query
     })
