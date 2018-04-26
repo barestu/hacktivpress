@@ -14,10 +14,10 @@ let articleSchema = new Schema ({
     type: String,
     default: null
   },
-  author: [{
+  author: {
     type: Schema.Types.ObjectId,
     ref: 'User'
-  }]
+  }
 },{
   timestamps: true
 })
